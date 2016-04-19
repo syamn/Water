@@ -48,6 +48,8 @@
                 $flg_str = '<img src="ok.png" > 水が出る';
             } elseif ($a["flg"] == 2) {
                 $flg_str = '<img src="go.png" > 水の提供可能';
+            } elseif ($a["flg"] == 3) {
+                $flg_str = '<img src="notdrink.png" > 飲水不可';
             }
 
             if($a["comment"] == "null"){
@@ -57,10 +59,10 @@
             echo "<tr>";
             echo "<td>" . $a["Id"] . "</td>";
             echo "<td>" . date("Y/m/d H:i:s", $a["time"]) . "</td>";
-            echo "<td>" . $a["locate"] . "</td>";
-            echo "<td>" . $a["address"] . "</td>";
+            echo "<td>" . h($a["locate"]) . "</td>";
+            echo "<td>" . h($a["address"]) . "</td>";
             echo "<td>" . $flg_str . "</td>";
-            echo "<td>" . $a["comment"] . "</td>";
+            echo "<td>" . h($a["comment"]) . "</td>";
             echo "</tr>";
         }
         ?>

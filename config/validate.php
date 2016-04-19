@@ -9,7 +9,7 @@
  */
 function VerifyFlag($flag) {
     $i = (int)$flag;
-    if( 0 <= $i && $i <= 2 ){
+    if( 0 <= $i && $i <= 3 ){
         return $i;
     }
     return 0;
@@ -30,3 +30,13 @@ function IsLocateString($locate) {
     return false;
 }
 
+
+/**
+ * URLとして妥当かチェックする
+ * @param url
+ *
+ * @return boolean
+ */
+function IsUrl($url) {
+    return filter_var($url, FILTER_VALIDATE_URL) !== false;
+}
